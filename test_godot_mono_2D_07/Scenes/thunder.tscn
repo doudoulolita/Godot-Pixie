@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgi5it17k8csd"]
+
+[ext_resource type="Texture2D" uid="uid://7tutt3frcan3" path="res://Mes_Assets/ennemis/thunder-eclair1.png" id="1_t8cr6"]
+[ext_resource type="Script" path="res://Scripts/thunder.cs" id="2_vi3ym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46gq4"]
+size = Vector2(33, 400)
+
+[node name="thunder" type="Sprite2D"]
+position = Vector2(169, 213)
+scale = Vector2(0.2, 0.15)
+texture = ExtResource("1_t8cr6")
+script = ExtResource("2_vi3ym")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(15, 60)
+scale = Vector2(10, 1)
+shape = SubResource("RectangleShape2D_46gq4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
