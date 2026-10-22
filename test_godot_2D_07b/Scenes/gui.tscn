@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjtrf0kwnixn5"]
+
+[ext_resource type="Texture2D" uid="uid://p7tf21eqqj03" path="res://Mes_Assets/objets/objet2.png" id="1_kwpst"]
+[ext_resource type="Script" path="res://Scripts/gui.cs" id="1_xvxp4"]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_xvxp4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 18.0
+offset_top = 26.0
+offset_right = 58.0
+offset_bottom = 66.0
+scale = Vector2(1.95326, 1.62271)
+texture = ExtResource("1_kwpst")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+offset_left = 261.0
+offset_top = 26.0
+offset_right = 313.0
+offset_bottom = 49.0
+scale = Vector2(2.87391, 2.31165)
+text = "10"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 93.0
+offset_top = 27.0
+offset_right = 149.0
+offset_bottom = 50.0
+scale = Vector2(2.87391, 2.31165)
+text = "Score ="
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 323.0
+offset_top = 30.0
+offset_right = 375.0
+offset_bottom = 53.0
+scale = Vector2(1.87955, 1.8552)
+text = "points"

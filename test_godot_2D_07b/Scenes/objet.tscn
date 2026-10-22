@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4g13foyeyanf"]
+
+[ext_resource type="Texture2D" uid="uid://p7tf21eqqj03" path="res://Mes_Assets/objets/objet2.png" id="1_b8nvw"]
+[ext_resource type="Script" path="res://Scripts/objet.cs" id="2_slvmr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5am0k"]
+radius = 4.13931
+height = 17.1398
+
+[node name="objet" type="Sprite2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_b8nvw")
+script = ExtResource("2_slvmr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
+scale = Vector2(1.93269, 0.525275)
+skew = 0.0261799
+shape = SubResource("CapsuleShape2D_5am0k")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
